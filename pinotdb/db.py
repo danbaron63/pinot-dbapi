@@ -205,6 +205,7 @@ class Connection:
                     else None
                 ),
             )
+            self.is_session_external = False
 
         self._kwargs['session'] = self.session
         cursor = Cursor(*self._args, **self._kwargs)
@@ -242,6 +243,7 @@ class AsyncConnection(Connection):
                     else None
                 ),
             )
+            self.is_session_external = False
 
         self._kwargs['session'] = self.session
         cursor = AsyncCursor(*self._args, **self._kwargs)
